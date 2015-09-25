@@ -1,16 +1,16 @@
 ---
 spring:
   application:
-    name: sample-ping
+    name: poc-ping
   cloud:
     config:
       discovery:
         enabled: true
-        serviceId: SAMPLE-CONFIG
+        serviceId: poc-config
 
 eureka:
   instance:
     nonSecurePort: ${server.port:8080}
   client:
     serviceUrl:
-      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+      defaultZone: http://${EUREKA_HOST:poc-eureka}:${EUREKA_PORT:8761}/eureka/
